@@ -1,10 +1,10 @@
 const videos = [
     {   
         id: 1, 
-        name: "Puro Guayeteo", 
-        artist: "Wisin, Don Omar, Jowell & Randy - Puro Guayeteo", 
-        img: "GUAYETEOPICCC.jpg", 
-        video: "Wisin, Don Omar, Jowell & Randy - Puro Guayeteo (Official Video).mp4" 
+        name: "TOUCHDOWN", 
+        artist: "Messiah x Myke Towers", 
+        img: "MessiahMikeTouchDownPic.jpg", 
+        video: "Messiah, Myke Towers - TOUCHDOWN (Video Oficial).mp4" 
     },
     {   
         id: 2, 
@@ -15,17 +15,17 @@ const videos = [
     },
     {   
         id: 3, 
+        name: "Llego El Invierno", 
+        artist: "El Fecho Rd", 
+        img: "FechoLlegoElInviernoPic.jpg", 
+        video: "El Fecho RD - Llego El Invierno (video Oficial).mp4" 
+    },
+    {   
+        id: 4, 
         name: "Lollipop", 
         artist: "Darell", 
         img: "darrellolpic.jpg", 
         video: "Darell - Lollipop (Official Video).mp4" 
-    },
-    {   
-        id: 4, 
-        name: "Segun Quien", 
-        artist: "Maluma x Carin Leon", 
-        img: "malucarinsequienpic1.jpg", 
-        video: "Maluma, Carin Leon - Según Quién (Official Video).mp4" 
     },
     {   
         id: 5, 
@@ -64,11 +64,25 @@ const videos = [
     },
     {   
         id: 10, 
+        name: "Segun Quien", 
+        artist: "Maluma x Carin Leon", 
+        img: "malumacaripic.jpg", 
+        video: "Maluma, Carin Leon - Según Quién (Official Video).mp4" 
+    },
+    {   
+        id: 11, 
         name: "Si Antes Te Hubiera Conocido", 
         artist: "Karol G", 
         img: "karolgsiantePIC.jpg", 
         video: "KAROL G - Si Antes Te Hubiera Conocido(video).mp4" 
-    }
+    },
+    {   
+        id: 12, 
+        name: "Puro Guayeteo", 
+        artist: "Wisin, Don Omar, Jowell & Randy - Puro Guayeteo", 
+        img: "GUAYETEOPICCC.jpg", 
+        video: "Wisin, Don Omar, Jowell & Randy - Puro Guayeteo (Official Video).mp4" 
+    },
     
 ];
 

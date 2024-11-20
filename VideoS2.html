@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+    <title>LOLLIPOP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="VideoS2.css">
 </head>
 <body class="lightPlayer">
+
     <div class="video-player">
+
+         
 
         <h1 class="lolli-title">LOLLIP<ion-icon name="headset-sharp" onclick="toggleClassPlayer()"></ion-icon>P</h1>
         <!-- Search bar -->
+         
+           <!-- Video display area -->
+         <video id="video-player" width="100%" controls>
+           <source id="video-source" src="" type="video/mp4">
+         </video>
+    
         <input type="text" id="search-input" placeholder=".;.LOLLITA VIDEOS.;.">
-
-        <!-- Video display area -->
-        <video id="video-player" width="100%" controls>
-            <source id="video-source" src="" type="video/mp4">
-        </video>
-
+      
         <!-- Video list -->
         <div id="video-list" class="video-list"></div>
 
@@ -37,11 +41,11 @@
             <button id="random-button" class="control-btn"><i class="fas fa-random"></i></button>
            
           </div>
-
-        <!-- Volume and progress -->
-        <div class="volume-controls">
-            <input type="range" id="volume-slider" value="1" max="1" step="0.01">
-        </div>
+            <!-- Volume and progress -->
+            <div class="volume-controls">
+                <input type="range" id="volume-slider" value="1" max="1" step="0.01">
+           </div>
+     
 
         <div class="jj-title">JJPoweredIT<ion-icon name="bonfire-sharp"></ion-icon></div>
      <div class="homebtn"><a href="https://jjservice.github.io/L2/1.html">
