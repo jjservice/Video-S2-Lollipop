@@ -320,7 +320,23 @@
       margin-bottom: 10px;
       cursor: pointer;
     }
+
+    #voice-search-button{
+      position: relative;
+      top: -45px;
+      right: 19px;
+      height: 30px;
+      width: 90px;  
+      border-radius: 10px;
+      border: none;
+      cursor: pointer
+      
+    }
+    #language-selector{
+      position: relative;
+      top: -10px;
   }
+}
   
   
   .homebtn{
