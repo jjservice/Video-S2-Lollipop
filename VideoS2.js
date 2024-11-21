@@ -263,6 +263,6 @@ myButton.addEventListener("click", event => {
      }
    else{
         myImg.style.display = "none";
-        myButton.textContent = "Show Screen";
+        myButton.textContent = "Screen";
 }   
 });

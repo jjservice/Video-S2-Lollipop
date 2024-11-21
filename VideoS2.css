@@ -569,17 +569,18 @@
     margin: 0% auto;
     display: flex;
     text-align: center;
-    padding: 5px;
-    background-color: rgba(114, 5, 32, 0.336);
+    padding: 5px 10px;
+    background-color: rgba(5, 25, 114, 0.336);
     border: none;
     border-bottom: 2px solid rgba(0, 0, 255, 0.356);
     box-shadow: 0px 2px 5px lightblue;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 20px;
     font-size: 15px;
     color: wheat;
     text-shadow: 2px 2px 2px darkblue;
     opacity: 80%;
+    
   }
   body.lightPlayer #HideShow-Btn{
     color: gold;
