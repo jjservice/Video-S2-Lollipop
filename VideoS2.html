@@ -23,6 +23,17 @@
        
     
         <input type="text" id="search-input" placeholder=".;.LOLLITA VIDEOS.;.">
+
+        <button id="voice-search-button"><i class="fas fa-microphone"></i>
+          <audio id="notification-sound" src="notification.mp3" preload="auto"></audio>
+        </button>
+     
+      <select id="language-selector">
+        <option value="en-US">English</option>
+        <option value="es-ES">Spanish</option>
+        <option value="fr-FR">French</option>
+        <!-- Add more languages as needed -->
+        </select>
       
         <!-- Video list -->
         <div id="video-list" class="video-list"></div>

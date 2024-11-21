@@ -241,6 +241,111 @@ searchInput.addEventListener("input", function() {
 
     renderVideos(filteredVideos);
 });
+///voice search ///
+const voiceSearchButton = document.getElementById("voice-search-button");
+
+// Check if the SpeechRecognition API is available
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+let recognition;
+if (SpeechRecognition) {
+    recognition = new SpeechRecognition();
+    recognition.lang = "es-ES"; // Set language for recognition (you can change this to other languages)
+    recognition.continuous = false; // Only listen for a single command
+    recognition.interimResults = false; // No need for interim results
+
+    // Function to start the voice recognition when the button is clicked
+    voiceSearchButton.addEventListener("click", () => {
+        recognition.start();
+    });
+
+    // Handle the speech recognition result
+    recognition.addEventListener("result", (event) => {
+        const transcript = event.results[0][0].transcript.toLowerCase(); // Convert to lowercase to match the song names/artists
+        searchInput.value = transcript; // Set the search input to the recognized speech
+
+        // Filter the songs based on the recognized voice input
+        const filteredSongs = songs.filter(song =>
+            song.name.toLowerCase().includes(transcript) ||
+            song.artist.toLowerCase().includes(transcript)
+        );
+
+        renderSongs(filteredSongs); // Render the filtered song list
+    });
+
+    // Handle speech recognition errors
+    recognition.addEventListener("error", (event) => {
+        console.error("Speech recognition error:", event.error);
+    });
+
+    // Optionally, handle the end of recognition
+    recognition.addEventListener("end", () => {
+        console.log("Voice search ended");
+    });
+} else {
+    console.error("Sorry, Lollita can not recognized your voice");
+}
+
+// Assuming you already have the following in your HTML:
+// <audio id="notification-sound" src="notification.mp3" preload="auto"></audio>
+
+const notificationSound = document.getElementById("notification-sound");
+
+// Voice search event listener for recognition result
+recognition.addEventListener("result", (event) => {
+    const transcript = event.results[0][0].transcript.toLowerCase(); // Convert to lowercase to match the song names/artists
+    searchInput.value = transcript; // Set the search input to the recognized speech
+
+    // Filter the songs based on the recognized voice input
+    const filteredSongs = songs.filter(song =>
+        song.name.toLowerCase().includes(transcript) ||
+        song.artist.toLowerCase().includes(transcript)
+    );
+
+    renderSongs(filteredSongs); // Render the filtered song list
+
+    // Play the sound notification if songs are found
+    if (filteredSongs.length > 0) {
+        notificationSound.play(); // Play sound if matches are found
+    }
+});
+
+// Optional: Handle other events like error and end if you want to give feedback for those situations
+recognition.addEventListener("error", (event) => {
+    console.error("Speech recognition error:", event.error);
+});
+
+// Optional: Handle end of recognition event
+recognition.addEventListener("end", () => {
+    console.log("Voice search ended");
+});
+
+
+recognition.addEventListener("result", (event) => {
+    // Get the transcript from the speech recognition result
+    let transcript = event.results[0][0].transcript.toLowerCase();
+
+    // Remove the period at the end of the text if it exists
+    if (transcript.endsWith(".")) {
+        transcript = transcript.slice(0, -1); // Remove the last character (the period)
+    }
+
+    // Set the search input to the recognized speech (without period)
+    searchInput.value = transcript;
+
+    // Filter the songs based on the recognized voice input
+    const filteredSongs = songs.filter(video =>
+        video.name.toLowerCase().includes(transcript) ||
+        video.artist.toLowerCase().includes(transcript)
+    );
+
+    renderSongs(filteredSongs); // Render the filtered song list
+
+    // Play the sound notification if songs are found
+    if (filteredSongs.length > 0) {
+        notificationSound.play(); // Play sound if matches are found
+    }
+});
 // Lights Section //////////////////////////////////
 function toggleClassPlayer(){
 
@@ -248,6 +353,7 @@ function toggleClassPlayer(){
     body.classList.toggle('lightPlayer');
     
     }
+
 
 //////Hide And Show Section //////////
 
