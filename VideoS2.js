@@ -248,3 +248,21 @@ function toggleClassPlayer(){
     body.classList.toggle('lightPlayer');
     
     }
+
+//////Hide And Show Section //////////
+
+const myButton = document.getElementById("HideShow-Btn");
+const myImg = document.getElementById("video-player");
+
+myButton.addEventListener("click", event => {
+
+   if
+   (myImg.style.display === "none"){
+    myImg.style.display = "block";
+    myButton.textContent ="Hide Screen";
+     }
+   else{
+        myImg.style.display = "none";
+        myButton.textContent = "Show Screen";
+}   
+});
